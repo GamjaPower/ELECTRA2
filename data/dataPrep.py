@@ -163,7 +163,7 @@ def main(args):
             electra_preprocessing_command += ' --vocab-file=' + args.vocab_file
             electra_preprocessing_command += ' --do-lower-case' if args.do_lower_case else ' --no-lower-case'
             electra_preprocessing_command += ' --max-seq-length=' + str(args.max_seq_length)
-            electra_preprocessing_command += ' --num-processes=8'
+            electra_preprocessing_command += ' --num-processes=32'
             electra_preprocessing_command += ' --num-out-files=' + str(args.n_training_shards) if _dir == 'train' \
                 else ' --num-out-files=' + str(args.n_test_shards)
             electra_preprocessing_process = subprocess.Popen(electra_preprocessing_command, shell=True)
